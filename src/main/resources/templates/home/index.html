@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Homepage</title>
@@ -11,11 +11,11 @@
     <div class="container">
 
         <ul class="navbar">
-            <li c> <a class="nav-header" href="/">Home</a></li>
-            <li class="dropdown"> <a class="nav-header" href="/">Cars</a>
+            <li c> <a class="nav-header" href="/">Logo</a></li>
+            <li class="dropdown"> <a class="nav-header" href="/">Biludlejning</a>
 
                 <ul class="dropdown-list">
-                    <li class="dropdown-item"> <a href="/">View cars</a></li>
+                    <li class="dropdown-item"> <a href="/">Om os</a></li>
                     <li class="dropdown-item"> <a href="/">Rent cars</a></li>
                     <li class="dropdown-item"> <a href="/">Change car</a></li>
                 </ul>
@@ -24,6 +24,44 @@
         </ul>
 
     </div>
+
+
+<table>
+
+    <thead>
+
+    <th>Driver licence:</th>
+    <th>Driver since:</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Phone number</th>
+    <th>Mobile number</th>
+    <th>Email</th>
+    <th>Zip code</th>
+    <th>City</th>
+
+
+    </thead>
+
+    <tbody>
+
+    <tr th:each="customer: ${customers}">
+        <td th:text="${customer.driver_license_number}" > </td>
+        <td th:text="${customer.driver_since_number}" > </td>
+        <td th:text="${customer.first_name}" > </td>
+        <td th:text="${customer.last_name}" > </td>
+        <td th:text="${customer.phone_number}" > </td>
+        <td th:text="${customer.mobile_number}" > </td>
+        <td th:text="${customer.email}" > </td>
+        <td th:text="${customer.zip_code}" > </td>
+        <td th:text="${customer.city}" > </td>
+
+    </tr>
+    </tbody>
+
+
+
+</table>
 
 </body>
 

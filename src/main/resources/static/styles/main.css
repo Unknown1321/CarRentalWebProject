@@ -35,10 +35,15 @@ ul>li {
     margin: 2% 0 0 2%;
 }
 
-a {
+ul > li > a {
     text-decoration: none;
     color: black;
 }
+
+
+
+
+
 
 .navbar >li:nth-child(1):after,
 .navbar >li:nth-child(2):after,
@@ -47,26 +52,13 @@ a {
 .navbar>li:nth-child(6):after{
     content: "";
     position: absolute;
-    background-color: red;
+    background-color: gainsboro;
     height: 3px;
     width: 0;
     right: 24%;
-    bottom: -30%;
+    bottom: 30%;
     transition: 0.5s;
 }
-
-.dropdown-list > li:after {
-    bottom: 0;
-    content: "";
-    position: absolute;
-    background-color: red;
-    height: 3px;
-    width: 0;
-    right: 7%;
-    transition: 0.5s;
-}
-
-
 
 .navbar>li:nth-child(2):hover:after,
 .navbar>li:nth-child(2):hover:after,
@@ -77,9 +69,6 @@ a {
     width:55%;
 }
 
-.dropdown-list > li:hover:after{
-    width: 60%;
-}
 
 
 
@@ -127,6 +116,26 @@ ul>li>a:hover {
     font-size: 2.2em;
     bottom: 33%;
 }
+
+.button-container{
+    text-align: center;
+    margin: 12% 0 0 34%;
+    width: 31%;
+    position: absolute;
+}
+
+.button-container  a{
+    background-color: rgba(23, 26, 32, 0.8);
+    padding: 3% 35px;
+    margin: 3% 0 0 10%;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
 
 /*.header-container{*/
 /*    text-align: center;*/

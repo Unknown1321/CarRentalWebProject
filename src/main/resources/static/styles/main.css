@@ -8,7 +8,9 @@
 
 body {
     font-size: 1.3em;
-    background: lightblue;
+    background-image: url("/images/car-pic.jpeg");
+    background-size: 100% 1650%;
+    background-repeat: no-repeat;
 }
 
 
@@ -35,11 +37,14 @@ ul>li {
 
 a {
     text-decoration: none;
-    color: red;
+    color: black;
 }
 
 .navbar >li:nth-child(1):after,
-.navbar>li:nth-child(3):after{
+.navbar >li:nth-child(2):after,
+.navbar >li:nth-child(3):after,
+.navbar >li:nth-child(5):after,
+.navbar>li:nth-child(6):after{
     content: "";
     position: absolute;
     background-color: red;
@@ -63,14 +68,17 @@ a {
 
 
 
-.navbar>li:nth-child(1):hover:after,
-.navbar>li:nth-child(3):hover:after
+.navbar>li:nth-child(2):hover:after,
+.navbar>li:nth-child(2):hover:after,
+.navbar>li:nth-child(3):hover:after,
+.navbar>li:nth-child(5):hover:after,
+.navbar>li:nth-child(6):hover:after
 {
     width:55%;
 }
 
 .dropdown-list > li:hover:after{
-    width: 100%;
+    width: 60%;
 }
 
 
@@ -86,11 +94,6 @@ ul>li>a:hover {
 .nav-header {
     padding: 5px 55px;
     border-radius: 10px;
-}
-
-
-.container>.dropdown:hover {
-    background-color: aqua;
 }
 
 .dropdown:hover .dropdown-list {
@@ -117,10 +120,24 @@ ul>li>a:hover {
     border-radius: 10px;
 }
 
-#Kailua-button{
+#kailua-button{
     position: relative;
     right: 25%;
-    font-family: Algerian;
-    font-size: 3em;
-    bottom: 50%;
+    font-family: Copperplate;
+    font-size: 2.2em;
+    bottom: 33%;
 }
+
+/*.header-container{*/
+/*    text-align: center;*/
+/*}*/
+
+/*.header-container h1{*/
+/*    font-size: 3em;*/
+/*    font-family: New Peninim MT;*/
+/*}*/
+
+/*.header-container p{*/
+/*    font-size: 1.5em;*/
+/*    font-family: Aven;*/
+/*}*/

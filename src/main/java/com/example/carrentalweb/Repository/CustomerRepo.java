@@ -49,3 +49,39 @@ public class CustomerRepo {
     }
 
 }
+
+/*<table>
+
+    <thead>
+
+    <th>Driver licence:</th>
+    <th>Driver since:</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Phone number</th>
+    <th>Mobile number</th>
+    <th>Email</th>
+    <th>Zip code</th>
+    <th>City</th>
+
+
+    </thead>
+
+    <tbody>
+
+    <tr th:each="customer: ${customers}">
+        <td th:text="${customer.driver_license_number}" > </td>
+        <td th:text="${customer.driver_since_number}" > </td>
+        <td th:text="${customer.first_name}" > </td>
+        <td th:text="${customer.last_name}" > </td>
+        <td th:text="${customer.phone_number}" > </td>
+        <td th:text="${customer.mobile_number}" > </td>
+        <td th:text="${customer.email}" > </td>
+        <td th:text="${customer.zip_code}" > </td>
+        <td th:text="${customer.city}" > </td>
+
+    </tr>
+    </tbody>
+
+
+ </table>*/

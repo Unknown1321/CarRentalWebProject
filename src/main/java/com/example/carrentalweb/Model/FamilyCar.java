@@ -9,15 +9,14 @@ public class FamilyCar extends Car {
 
 
     public FamilyCar(String registrationNumber, String brand, String model, String registrationDate,
-                  int kmDriven, boolean manualGear, boolean airCondition, boolean cruiseControl,
-                  boolean sevenSeatsOrMore) {
+                     int kmDriven, boolean manualGear, boolean airCondition, boolean cruiseControl,
+                     boolean sevenSeatsOrMore) {
         super(registrationNumber, brand, model, registrationDate, kmDriven);
         this.manualGear = manualGear;
         this.airCondition = airCondition;
         this.cruiseControl = cruiseControl;
         this.sevenSeatsOrMore = sevenSeatsOrMore;
     }
-
 
     public boolean isManualGear() {
         return manualGear;
@@ -50,6 +49,4 @@ public class FamilyCar extends Car {
     public void setSevenSeatsOrMore(boolean sevenSeatsOrMore) {
         this.sevenSeatsOrMore = sevenSeatsOrMore;
     }
-
-
 }

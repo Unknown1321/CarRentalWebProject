@@ -18,7 +18,6 @@ public class LuxuryCar extends Car{
     }
 
 
-
     public boolean isOver3000CCM() {
         return over3000CCM;
     }
@@ -50,5 +49,4 @@ public class LuxuryCar extends Car{
     public void setLeatherSeats(boolean leatherSeats) {
         this.leatherSeats = leatherSeats;
     }
-
 }

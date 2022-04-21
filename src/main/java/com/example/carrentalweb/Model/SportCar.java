@@ -22,6 +22,7 @@ public class SportCar extends Car {
 
 
     }
+
     public boolean isManualGear() {
         return manualGear;
     }

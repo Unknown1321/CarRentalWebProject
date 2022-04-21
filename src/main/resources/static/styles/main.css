@@ -116,3 +116,11 @@ ul>li>a:hover {
     right: 16%;
     border-radius: 10px;
 }
+
+#Kailua-button{
+    position: relative;
+    right: 25%;
+    font-family: Algerian;
+    font-size: 3em;
+    bottom: 50%;
+}

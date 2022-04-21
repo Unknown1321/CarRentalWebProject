@@ -1,6 +1,6 @@
 package com.example.carrentalweb.Model;
 
-public class Car { //hello
+public class Car {
 
     private String brand;
     private String model;

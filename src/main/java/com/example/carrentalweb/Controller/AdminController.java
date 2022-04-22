@@ -45,9 +45,11 @@ public class AdminController {
 
     @PostMapping("/admin/newFamily")
         public String newFamily(@ModelAttribute FamilyCar familyCar){
+        System.out.println("ENTER RIGTH METHOD");
             carService.addnew(familyCar);
             familyService.addNew(familyCar);
-            return "redirect:/admin/carsMenu";
+        System.out.println(familyCar);
+            return "redirect:/";
     }// new family
 
 }

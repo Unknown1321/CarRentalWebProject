@@ -17,12 +17,13 @@ public class FamilyRepo {
     private JdbcTemplate jdbcTemplate;
 
     public void addFamilyCar(FamilyCar car){
-        String sql = "INSERT INTO family_cars(registration_number, manualGear, airCondition, cruiseControl, sevenSeatsOrMore) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO family_cars(registration_number, manual_gear, air_condition, cruise_control, seven_seats_or_more) VALUES(?, ?,?,?,?)";
+        System.out.println("Debug message!");
         jdbcTemplate.update(sql,car.getRegistrationNumber(), car.isManualGear(), car.isAirCondition(), car.isCruiseControl(), car.isSevenSeatsOrMore());
     }
 
     public List<FamilyCar> fetchAll() {
-        String sql = "SELECT registration_number, manualGear, airCondition, cruiseControl, sevenSeatsOrMore FROM family_cars ";
+        String sql = "SELECT registration_number, manual_gear, air_condition, cruise_control, seven_seats_or_more FROM family_cars ";
         RowMapper<FamilyCar> rowMapper = new BeanPropertyRowMapper<>(FamilyCar.class);
         return jdbcTemplate.query(sql, rowMapper);
     }
@@ -35,8 +36,8 @@ public class FamilyRepo {
     }
 
     public void updateFamilyCar(FamilyCar car) {
-        String sql = "UPDATE family_cars SET registration_number = ?, manualGear = ?, airCondition = ?, " +
-                "cruiseControl = ?, sevenSeatsOrMore = ? WHERE registration_number = ? ";
+        String sql = "UPDATE family_cars SET registration_number = ?, manual_gear = ?, air_condition = ?, " +
+                "cruise_control = ?, seven_seats_or_more = ? WHERE registration_number = ? ";
         jdbcTemplate.update(sql,car.getRegistrationNumber(), car.isManualGear(), car.isAirCondition(), car.isCruiseControl(), car.isSevenSeatsOrMore());
     }
 

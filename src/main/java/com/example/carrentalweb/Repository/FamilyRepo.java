@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.util.List;
 
+@Repository
 public class FamilyRepo {
 
     @Autowired

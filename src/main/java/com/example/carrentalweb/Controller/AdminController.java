@@ -40,6 +40,12 @@ public class AdminController {
         return "/admin/carsMenu";
     }//Cars menu
 
+    //customers menu
+    @GetMapping("/admin/customerMenu")
+    public String customerMenu(){
+        return "/admin/customerMenu";
+    }
+
     @GetMapping("/admin/viewCars")
     public String viewCars(Model model){
         List<FamilyCar> familyCars = familyService.fetchAll();
@@ -90,6 +96,19 @@ public class AdminController {
         sportService.addNew(sportCar);
         return "redirect:/";
     }
+
+    //new customer GET
+    @GetMapping("admin/newCustomer")
+    public String newCustomer(){
+        return "/admin/newCustomer";
+    }
+    @PostMapping("/admin/newCustomer")
+    public String newCustomer(@ModelAttribute Customer customer){
+        customerService.addCustomer(customer);
+        return "redirect:/";
+    }
+
+    //new customer POST
 
 
     @GetMapping("/admin/customer")

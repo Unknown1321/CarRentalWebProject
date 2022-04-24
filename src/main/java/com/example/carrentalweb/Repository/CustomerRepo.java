@@ -16,7 +16,7 @@ public class CustomerRepo {
     private JdbcTemplate jdbcTemplate;
 
     public void addCustomer(Customer customer){
-        String sql = "INSERT INTO customer_table(driver_license_number, driver_since_number, first_name, last_name, phone_number, mobile_number, email, zip_table.zip_code, city) VALUES(?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO customer_table(driver_license_number, driver_since_number, first_name, last_name, phone_number, mobile_number, email, zip_code , city) VALUES(?,?,?,?,?,?,?,?,?)";
         jdbcTemplate.update(sql,customer.getDriver_license_number(), customer.getDriver_since_number(),
                 customer.getFirst_name(), customer.getFirst_name(), customer.getPhone_number(), customer.getMobile_number(),
                 customer.getEmail(), customer.getZip_code(), customer.getCity());

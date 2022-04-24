@@ -18,8 +18,8 @@ public class CarService {
         return carRepo.fetchAll();
     }
 
-    public void addnew (FamilyCar familyCar){
-        carRepo.addCar(familyCar);
+    public void addnew (Car car){
+        carRepo.addCar(car);
 
     }
 }

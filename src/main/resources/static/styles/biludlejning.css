@@ -1,19 +1,26 @@
 
 
-#Porsche-billede img {
-    position: relative;
-    height: 75%;
-    width: 100%;
+.Overskrift{
+    position: absolute;
+    font-size: 3em;
+    font-family: serif;
+    text-align: center;
+    left: 29%;
+    top: 18%;
 }
 
-#Volvo-billede img {
-    position: relative;
-    height: 75%;
+.billeder{
+    position: absolute;
     width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-#Bentley-billede img {
-    position: relative;
-    height: 75%;
-    width: 100%;
+.billeder img {
+    width: 33.33%;
+    height: 33.33%;
+    border-radius: 50%;
 }
+

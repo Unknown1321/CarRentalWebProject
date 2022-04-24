@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
 @Controller
 public class HomeController {
 
@@ -27,6 +28,11 @@ public class HomeController {
     @RequestMapping(path = "/biludlejning", method = RequestMethod.GET)
     public String getIndex() {
         return "home/biludlejning";
+    }
+
+    @GetMapping("/om-os")
+    public String getOmOs(){
+        return "home/om-os";
     }
 
     @GetMapping("/login")

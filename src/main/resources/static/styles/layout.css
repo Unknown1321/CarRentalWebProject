@@ -93,18 +93,16 @@ ul > li > a:hover {
 }
 
 .dropdown > .dropdown-list {
-    border-radius: 10px;
     display: none;
     list-style: none;
     position: relative;
     left: 20%;
-    line-height: 2.1em;
+    line-height: 2.8em;
 }
 
 .dropdown-item {
     position: relative;
-    padding: 3px;
-    border-radius: 10px;
+    padding: 2%
 }
 
 #kailua-home-button {

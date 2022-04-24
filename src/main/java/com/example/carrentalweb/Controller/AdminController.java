@@ -1,10 +1,13 @@
 package com.example.carrentalweb.Controller;
 
+import com.example.carrentalweb.Model.Customer;
 import com.example.carrentalweb.Model.FamilyCar;
 import com.example.carrentalweb.Service.CarService;
+import com.example.carrentalweb.Service.CustomerService;
 import com.example.carrentalweb.Service.FamilyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +19,9 @@ public class AdminController {
     CarService carService;
     @Autowired
     FamilyService familyService;
+
+    @Autowired
+    CustomerService customerService;
 
 
     @GetMapping("/admin")
@@ -52,4 +58,10 @@ public class AdminController {
             return "redirect:/";
     }// new family
 
+
+    @GetMapping("/admin/customer")
+        public String customerPage(@ModelAttribute Customer customer, Model model){
+            model.addAttribute("customers",customerService.fetchAll());
+            return "admin/customer";
+    }
 }

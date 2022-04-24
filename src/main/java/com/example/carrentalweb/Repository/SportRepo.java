@@ -6,16 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class SportRepo {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
     public void addSportCar(SportCar car){
-        String sql = "INSERT INTO sport_cars(registration_number, manualGear, over200HP) VALUES(?,?,?)";
+        String sql = "INSERT INTO sport_cars(registration_number, manual_gear, over200HP) VALUES(?,?,?)";
         jdbcTemplate.update(sql,car.getRegistrationNumber(), car.isManualGear(), car.isOver200HP());
     }
 

@@ -1,143 +1,30 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 100%;
-    font: inherit;
-}
-
-body {
-    font-size: 1.3em;
-    background-image: url("/images/car-pic.jpeg");
-    background-size: 100% 1650%;
-    background-repeat: no-repeat;
-}
-
-
-.container {
-    height: 50px;
-    border-radius: 20px;
+.button-container {
     width: 100%;
-}
-
-.container >.navbar {
+    position: absolute;
+    height: 15%;
     display: flex;
-    list-style: none;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+    bottom: 65%;
 }
 
-ul>li {
-    position: relative;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    letter-spacing: 0.5px;
-    padding: 0 10px;
-    margin: 2% 0 0 2%;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-.navbar >li:nth-child(1):after,
-.navbar >li:nth-child(2):after,
-.navbar >li:nth-child(3):after,
-.navbar >li:nth-child(5):after,
-.navbar>li:nth-child(6):after{
-    content: "";
-    position: absolute;
-    background-color: red;
-    height: 3px;
-    width: 0;
-    right: 24%;
-    bottom: -30%;
-    transition: 0.5s;
-}
-
-.dropdown-list > li:after {
-    bottom: 0;
-    content: "";
-    position: absolute;
-    background-color: red;
-    height: 3px;
-    width: 0;
-    right: 7%;
-    transition: 0.5s;
-}
-
-
-
-.navbar>li:nth-child(2):hover:after,
-.navbar>li:nth-child(2):hover:after,
-.navbar>li:nth-child(3):hover:after,
-.navbar>li:nth-child(5):hover:after,
-.navbar>li:nth-child(6):hover:after
-{
-    width:55%;
-}
-
-.dropdown-list > li:hover:after{
-    width: 60%;
-}
-
-
-
-
-ul>li>a:hover {
-    color: black;
-}
-
-
-
-
-.nav-header {
-    padding: 5px 55px;
-    border-radius: 10px;
-}
-
-.dropdown:hover .dropdown-list {
-    display: block;
-}
-
-.dropdown>.dropdown-list {
-    border-radius: 10px;
-    display: none;
-    list-style: none;
-    position: relative;
+.button-container > .btn {
+    background-color: rgba(23, 26, 32, 0.8);
+    padding: 1% 6.5%;
+    border-radius: 30px;
     color: white;
-    left: 20%;
-    line-height: 2.1em;
-    top: 6.5px;
-    width: 75%;
-    height: 100%;
+    text-decoration: none;
 }
 
-.dropdown-item {
-    position: relative;
-    padding: 3px;
-    right: 16%;
-    border-radius: 10px;
+.button-container > #btn-color {
+    background-color: rgba(244, 244, 244, 0.65);
+    color: #393c41;
 }
 
-#kailua-button{
-    position: relative;
-    right: 25%;
-    font-family: Copperplate;
-    font-size: 2.2em;
-    bottom: 33%;
+.button-container > .btn:hover {
+    border: 2px solid black;
 }
 
-/*.header-container{*/
-/*    text-align: center;*/
-/*}*/
 
-/*.header-container h1{*/
-/*    font-size: 3em;*/
-/*    font-family: New Peninim MT;*/
-/*}*/
 
-/*.header-container p{*/
-/*    font-size: 1.5em;*/
-/*    font-family: Aven;*/
-/*}*/

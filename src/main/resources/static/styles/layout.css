@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    font: inherit;
+}
+
+body {
+    font-size: 1.3em;
+    background-image: url("/images/car-pic.jpeg");
+    background-size: 100% 1650%;
+    background-repeat: no-repeat;
+}
+
+
+.container {
+    height: 50px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.container > .navbar {
+    display: flex;
+    list-style: none;
+    height: 123%;
+}
+
+ul > li {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+    margin: 2% 0 0 2%;
+    font-weight: 250;
+}
+
+ul > li > a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.dropdown-list > li:after{
+    content: "";
+    position: absolute;
+    background-color: gainsboro;
+    height: 3px;
+    width: 0;
+    bottom: 0;
+    right: 30%;
+    transition: 0.5s;
+}
+
+.dropdown-list > li:hover:after{
+    width: 80%;
+}
+
+.navbar > li:nth-child(2):after,
+.navbar > li:nth-child(3):after,
+.navbar > li:nth-child(4):after {
+    content: "";
+    position: absolute;
+    background-color: gainsboro;
+    height: 3px;
+    width: 0;
+    bottom: 0;
+    right: 24%;
+    transition: 0.5s;
+}
+.navbar > li:nth-child(2):hover:after,
+.navbar > li:nth-child(3):hover:after,
+.navbar > li:nth-child(4):hover:after {
+    width: 55%;
+}
+
+
+
+ul > li > a:hover {
+    color: black;
+}
+
+
+.nav-header {
+    padding: 5px 55px;
+    border-radius: 10px;
+}
+
+.dropdown:hover .dropdown-list {
+    display: block;
+}
+
+.dropdown > .dropdown-list {
+    display: none;
+    list-style: none;
+    position: relative;
+    left: 20%;
+    line-height: 2.8em;
+}
+
+.dropdown-item {
+    position: relative;
+    padding: 2%
+}
+
+#kailua-home-button {
+    position: relative;
+    right: 25%;
+    font-family: Copperplate;
+    font-size: 2.2em;
+    bottom: 33%;
+}

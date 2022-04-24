@@ -1,47 +1,45 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Homepage</title>
+    <title>Startside</title>
     <link href="/styles/main.css" rel="stylesheet">
+    <link href="/styles/layout.css" rel="stylesheet">
+
 
 </head>
 <body>
 
 
+<header>
     <div class="container">
-
         <ul class="navbar">
-            <li> <a class="nav-header" id="kailua-button" href="/">Kailua</a></li>
-            <li > <a class="nav-header" href="biludlejning">Biludlejning</a></li>
-            <li> <a class="nav-header" href="/">Om os</a></li>
+            <li><a class="nav-header" href="/" id="kailua-home-button">Kailua</a></li>
+            <li><a class="nav-header" href="biludlejning">Biludlejning</a></li>
+            <li><a class="nav-header" href="/">Opret dig</a></li>
+            <li><a class="nav-header" href="/">Om os</a></li>
 
-            <li> <a class="nav-header" href="/">Log på</a></li>
-            <li> <a class="nav-header" href="/">Opret dig</a></li>
-
-            <li class="dropdown"> <a class="nav-header" href="/">Hjælp</a>
+            <li class="dropdown"><a class="nav-header">Hjælp</a>
 
                 <ul class="dropdown-list">
-                    <li class="dropdown-item"> <a href="/">Hyppigt stillede spørgsmål</a></li>
-                    <li class="dropdown-item"> <a href="/">Kontakt os</a></li>
+                    <li class="dropdown-item"><a href="/">Spørgsmål</a></li>
+                    <li class="dropdown-item"><a href="/">Kontakt os</a></li>
                 </ul>
             </li>
         </ul>
 
     </div>
+</header>
+
+<div class="button-container">
+    <a class="btn" href="/" title="Udlej bil"> Udlej bil</a>
+    <a class="btn" href="/" id="btn-color" title="Opret dig i systemet">Opret dig her</a>
+</div>
 
 
-<!--    <div class="header-container">-->
-<!--        <h1>Kailua's cars</h1>-->
-<!--         <p>This is the future.</p>-->
-<!--    </div>-->
-
-
-
+<script src="/scripts/app.js"></script>
 </body>
 
-
-</body>
 </html>
 
 

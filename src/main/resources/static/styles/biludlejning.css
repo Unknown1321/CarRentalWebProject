@@ -7,7 +7,7 @@
 }
 
 body {
-
+    background-color: lightblue;
 }
 
 .container {
@@ -119,23 +119,23 @@ ul > li > a:hover {
     top: 18%;
 }
 
-div.biler {
+.biler {
     margin: 5px;
     border: 1px solid #ccc;
     float: left;
     width: 180px;
 }
 
-div.biler:hover {
+.biler:hover {
     border: 1px solid #777;
 }
 
-div.biler img{
+.biler img{
     width: 100%;
     height: auto;
 }
 
-div.desc {
+.desc {
     padding: 15px;
     text-align: center;
 }

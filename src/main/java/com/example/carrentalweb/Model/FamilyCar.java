@@ -7,6 +7,8 @@ public class FamilyCar extends Car {
     private boolean cruise_control;
     private boolean seven_seats_or_more;
 
+    public FamilyCar(){}
+
 
     public FamilyCar(String registrationNumber, String brand, String model, String registrationDate, int kmDriven, boolean manual_gear, boolean air_condition, boolean cruise_control, boolean seven_seats_or_more) {
         super(registrationNumber, brand, model, registrationDate, kmDriven);

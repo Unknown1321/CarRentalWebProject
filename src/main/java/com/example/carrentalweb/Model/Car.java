@@ -19,6 +19,21 @@ public class Car {
     public Car() {
     }
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", registrationNumber='" + registrationNumber + '\'' +
+                ", registrationDate='" + registrationDate + '\'' +
+                ", kmDriven=" + kmDriven +
+                '}';
+    }
+
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
+    }
+
     public String getBrand() {
         return brand;
     }

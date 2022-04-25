@@ -22,4 +22,12 @@ public class CarService {
         carRepo.addCar(car);
 
     }
+
+    public Car findCar(String regNum){
+        return carRepo.getCarByRegistrationNumber(regNum);
+    }
+
+    public void updateByReg (String reg, Car car){
+        carRepo.updateCar(reg, car);
+    }
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update car</title>
+</head>
+<body>
+<h3>Register car</h3>
+<form action="/admin/updateCarReg" method="post">
+    <input type="text" name="registrationNumber" class="text-box" th:value="${car.registrationNumber}" required>
+    <br>
+    <input type="text" name="brand" class="text-box"  th:value="${car.brand}"  required>
+    <br>
+    <input type="text" name="model" class="text-box"  th:value="${car.model}"  required>
+    <br>
+    <input type="text" name="registrationDate" class="text-box" th:value="${car.registrationDate}" required>
+    <br>
+    <input type="text" name="kmDriven" class="text-box" th:value="${car.kmDriven}" required>
+    <br>
+    <input type="text" name="manualGear" class="text-box"  th:value="${car.manualGear}"  required>
+    <br>
+    <input type="text" name="airCondition" class="text-box"  th:value="${car.airCondition}"  required>
+    <br>
+    <input type="text" name="cruiseControl" class="text-box"  th:value="${car.cruiseControl}"  required>
+    <br>
+    <input type="text" name="sevenSeatsOrMore" class="text-box"  th:value="${car.sevenSeatsOrMore}"  required>
+    <br>
+    <input type="submit" id="button-send" value="Save changes" />
+</form>
+</body>
+</html>

@@ -24,6 +24,7 @@ public class CarRepo {
     public List<Car> fetchAll() {
         String sql = "SELECT registration_number, brand, model, registration_date, km_driven FROM car_table ";
         RowMapper<Car> rowMapper = new BeanPropertyRowMapper<>(Car.class);
+        System.out.println("family car from carRepo");
         return jdbcTemplate.query(sql, rowMapper);
     }
 
@@ -34,10 +35,10 @@ public class CarRepo {
         return car;
     }
 
-    public void updateCar(Car car) {
+    public void updateCar(String reg, Car car) {
         String sql = "UPDATE car_table SET registration_number = ?, brand = ?, model = ?, " +
                 "registration_date = ?, km_driven = ? WHERE registration_number = ? ";
-        jdbcTemplate.update(sql, car.getRegistrationNumber(), car.getBrand(), car.getModel(), car.getRegistrationDate(), car.getKmDriven());
+        jdbcTemplate.update(sql, car.getRegistrationNumber(), car.getBrand(), car.getModel(), car.getRegistrationDate(), car.getKmDriven(), reg);
     }
 
     public void deleteCar(String registrationNumber) {

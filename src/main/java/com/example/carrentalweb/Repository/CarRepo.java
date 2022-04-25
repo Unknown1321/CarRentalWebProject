@@ -35,10 +35,10 @@ public class CarRepo {
         return car;
     }
 
-    public void updateCar(Car car) {
+    public void updateCar(String reg, Car car) {
         String sql = "UPDATE car_table SET registration_number = ?, brand = ?, model = ?, " +
                 "registration_date = ?, km_driven = ? WHERE registration_number = ? ";
-        jdbcTemplate.update(sql, car.getRegistrationNumber(), car.getBrand(), car.getModel(), car.getRegistrationDate(), car.getKmDriven());
+        jdbcTemplate.update(sql, car.getRegistrationNumber(), car.getBrand(), car.getModel(), car.getRegistrationDate(), car.getKmDriven(), reg);
     }
 
     public void deleteCar(String registrationNumber) {

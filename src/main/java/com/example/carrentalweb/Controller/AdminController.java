@@ -60,13 +60,25 @@ public class AdminController {
         model.addAttribute("familyCars", familyCars);
         return "/admin/updateCar";
     }//view cars only for updating method
-    @GetMapping("/admin/updateCar/{id}")
+
+
+    @GetMapping("/admin/updateCarReg/{id}")
     public String updateCar(@PathVariable("id") String id, Model model){
+        System.out.println("Paathvaariable");
         model.addAttribute("car", carService.findCar(id));
         model.addAttribute("familyCar",familyService.findFamily(id));
-        return "/admin/updateCar";
-    }
+        return "/admin/updateCarReg";
+    }//update GET
 
+
+    @PostMapping("/admin/updateCarReg")
+    public String updateCar(@ModelAttribute FamilyCar familyCar){
+        //carService.updateByReg(familyCar.getRegistrationNumber(), familyCar);
+        System.out.println("Error in sending to carRepo update");
+        familyService.updateFamily(familyCar.getRegistrationNumber(), familyCar);
+        System.out.println("Error in sending to familyRepo update");
+        return "redirect:/";
+    }
     @GetMapping("/admin/newCar")
     public String newCar (){
         return "/admin/newCar";

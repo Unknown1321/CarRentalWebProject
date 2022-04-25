@@ -37,10 +37,10 @@ public class FamilyRepo {
         return familyCar;
     }
 
-    public void updateFamilyCar(FamilyCar car) {
+    public void updateFamilyCar(String reg, FamilyCar car) {
         String sql = "UPDATE family_cars SET registration_number = ?, manual_gear = ?, air_condition = ?, " +
                 "cruise_control = ?, seven_seats_or_more = ? WHERE registration_number = ? ";
-        jdbcTemplate.update(sql,car.getRegistrationNumber(), car.isManualGear(), car.isAirCondition(), car.isCruiseControl(), car.isSevenSeatsOrMore());
+        jdbcTemplate.update(sql,car.getRegistrationNumber(), car.isManualGear(), car.isAirCondition(), car.isCruiseControl(), car.isSevenSeatsOrMore(), reg);
     }
 
     public void deleteFamilyCar(String registrationNumber) {

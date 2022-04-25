@@ -23,4 +23,7 @@ public class FamilyService {
     public FamilyCar findFamily(String regNum){
         return familyRepo.getFamilyCarByRegistrationNumber(regNum);
     }
+    public void updateFamily (String reg, FamilyCar familyCar) {
+        familyRepo.updateFamilyCar(reg, familyCar);
+    }
 }

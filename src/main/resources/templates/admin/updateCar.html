@@ -35,8 +35,10 @@
         <td th:text="${familyCar.cruiseControl}"/> </td>
         <td th:text="${familyCar.sevenSeatsOrMore}"/> </td>
         <td>
-            <a href="@{'/updateCar/'+${familyCar.registrationNumber}}">
-            <button>Update car</button></a></td>
+            <a th:href="@{'/admin/updateCarReg/'+${familyCar.registrationNumber}}">
+            <button>Update car</button>
+            </a>
+        </td>
     </tr>
     </tbody>
 

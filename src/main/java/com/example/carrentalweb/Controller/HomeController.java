@@ -35,6 +35,16 @@ public class HomeController {
         return "home/om-os";
     }
 
+    @GetMapping("/kontakt-os")
+    public String getKontaktOs(){
+        return "home/kontakt-os";
+    }
+
+    @GetMapping("/questions")
+    public String getQuestions(){
+        return "home/questions";
+    }
+
     @GetMapping("/login")
     public String getLogin(){
         return "home/login";

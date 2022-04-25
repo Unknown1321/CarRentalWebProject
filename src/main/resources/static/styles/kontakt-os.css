@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    font: inherit;
+}
+
+body {
+    background-color: lightblue;
+}
+
+.container {
+    height: 50px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.container > .navbar {
+    display: flex;
+    list-style: none;
+    height: 123%;
+}
+
+ul > li {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+    margin: 2% 0 0 2%;
+    font-weight: 250;
+}
+
+ul > li > a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.dropdown-list > li:after{
+    content: "";
+    position: absolute;
+    background-color: gainsboro;
+    height: 3px;
+    width: 0;
+    bottom: 0;
+    right: 30%;
+    transition: 0.5s;
+}
+
+.dropdown-list > li:hover:after{
+    width: 80%;
+}
+
+.navbar > li:nth-child(2):after,
+.navbar > li:nth-child(3):after,
+.navbar > li:nth-child(4):after {
+    content: "";
+    position: absolute;
+    background-color: gainsboro;
+    height: 3px;
+    width: 0;
+    bottom: 0;
+    right: 24%;
+    transition: 0.5s;
+}
+.navbar > li:nth-child(2):hover:after,
+.navbar > li:nth-child(3):hover:after,
+.navbar > li:nth-child(4):hover:after {
+    width: 55%;
+}
+
+
+
+ul > li > a:hover {
+    color: black;
+}
+
+
+.nav-header {
+    padding: 5px 55px;
+    border-radius: 10px;
+}
+
+.dropdown:hover .dropdown-list {
+    display: block;
+}
+
+.dropdown > .dropdown-list {
+    display: none;
+    list-style: none;
+    position: relative;
+    left: 20%;
+    line-height: 2.8em;
+}
+
+.dropdown-item {
+    position: relative;
+    padding: 2%
+}
+
+#kailua-home-button {
+    position: relative;
+    right: 25%;
+    font-family: Copperplate;
+    font-size: 2.2em;
+    bottom: 33%;
+}
+
+.om-os{
+    width: 100%;
+    padding: 78px 0px;
+    background-color: lightblue;
+}
+
+.om-os img{
+    height: auto;
+    width: 420px;
+}
+
+.om-os-tekst{
+    width: 550px;
+}
+
+.billede{
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.om-os-tekst h1{
+    color: black;
+    font-size: 80px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.om-os-tekst h5{
+    color: black;
+    font-size: 25px;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.om-os-tekst p{
+    color: black;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+
+button{
+    background: black;
+    color: whitesmoke;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: .4s;
+}
+
+button:hover{
+    background: transparent;
+    border: 2px solid black;
+    cursor: pointer;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update car</title>
+</head>
+<body>
+<h3>Register car</h3>
+<form action="/admin/updateCar" method="post">
+    <input type="text" name="registrationNumber" class="text-box" th:value="${car.registrationNumber}" required>
+    <br>
+    <input type="text" name="brand" class="text-box" placeholder="Enter brand" required>
+    <br>
+    <input type="text" name="model" class="text-box" placeholder="Enter model" required>
+    <br>
+    <input type="text" name="registrationDate" class="text-box" placeholder="Enter registration date" required>
+    <br>
+    <input type="text" name="kmDriven" class="text-box" placeholder="Enter km driven" required>
+    <br>
+    <input type="text" name="manualGear" class="text-box" placeholder="does it have manual gear?" required>
+    <br>
+    <input type="text" name="airCondition" class="text-box" placeholder="does it have air condition?" required>
+    <br>
+    <input type="text" name="cruiseControl" class="text-box" placeholder="does it have cruise control?" required>
+    <br>
+    <input type="text" name="sevenSeatsOrMore" class="text-box" placeholder="does it have more then 7 seats?" required>
+    <br>
+    <input type="submit" id="button-send" value="Save changes" />
+</form>
+</body>
+</html>

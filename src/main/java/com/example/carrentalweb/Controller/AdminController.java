@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -52,6 +53,19 @@ public class AdminController {
         model.addAttribute("familyCars", familyCars);
         return "/admin/viewCars";
     }//view cars only view
+
+    @GetMapping("/admin/updateCar")
+    public String updateCar(Model model){
+        List<FamilyCar> familyCars = familyService.fetchAll();
+        model.addAttribute("familyCars", familyCars);
+        return "/admin/updateCar";
+    }//view cars only for updating method
+    @GetMapping("/admin/updateCar/{id}")
+    public String updateCar(@PathVariable("id") String id, Model model){
+        model.addAttribute("car", carService.findCar(id));
+        model.addAttribute("familyCar",familyService.findFamily(id));
+        return "/admin/updateCar";
+    }
 
     @GetMapping("/admin/newCar")
     public String newCar (){
@@ -104,7 +118,7 @@ public class AdminController {
     }
     @PostMapping("/admin/newCustomer")
     public String newCustomer(@ModelAttribute Customer customer){
-        customerService.addCustomer(customer);
+        customerService.addNewCustomer(customer);
         return "redirect:/";
     }
 

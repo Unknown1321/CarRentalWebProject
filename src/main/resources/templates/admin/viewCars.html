@@ -1,13 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Cars</title>
+    <link href="/styles/viewCars.css" rel="stylesheet">
 </head>
 <body>
 <h1>See cars</h1>
 <div>
     <h3>Family cars</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>RegNumb</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>RegDate</th>
+                <th>kmdriven</th>
+                <th>manu-gear</th>
+                <th>Air-Cond.</th>
+                <th>CruiseContr.</th>
+                <th>>7Seats</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="familyCar : ${familyCars}">
+                <td th:text="${familyCar.registrationNumber}"/>
+                <td th:text="${familyCar.brand}"/> </td>
+                <td th:text="${familyCar.model}"/> </td>
+                <td th:text="${familyCar.registrationDate}"/> </td>
+                <td th:text="${familyCar.kmDriven}"/> </td>
+                <td th:text="${familyCar.manualGear}"/> </td>
+                <td th:text="${familyCar.airCondition}"/> </td>
+                <td th:text="${familyCar.cruiseControl}"/> </td>
+                <td th:text="${familyCar.sevenSeatsOrMore}"/> </td>
+                <td><button>Rent car</button></td>
+            </tr>
+        </tbody>
+
+    </table>
 
 
 </div>

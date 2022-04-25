@@ -7,6 +7,8 @@ public class LuxuryCar extends Car{
     private boolean cruiseControl;
     private boolean leatherSeats;
 
+    public LuxuryCar(){}
+
     public LuxuryCar(String registrationNumber, String brand, String model,String registrationDate,
                   int kmDriven, boolean over3000CCM, boolean automaticGear, boolean cruiseControl,
                   boolean leatherSeats) {

@@ -12,6 +12,16 @@ public class Customer {
     private int zip_code;
     private String city;
 
+    public Customer(String driver_license_number, String driver_since_number, String first_name, String last_name, int phone_number, int mobile_number, String email) {
+        this.driver_license_number = driver_license_number;
+        this.driver_since_number = driver_since_number;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.phone_number = phone_number;
+        this.mobile_number = mobile_number;
+        this.email = email;
+    }//No zip and City
+
     public Customer(String driver_license_number, String driver_since_number, String first_name, String last_name, int phone_number, int mobile_number, String email, int zip_code, String city) {
         this.driver_license_number = driver_license_number;
         this.driver_since_number = driver_since_number;

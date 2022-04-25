@@ -15,14 +15,18 @@ public class CustomerService {
     @Autowired
     private CustomerRepo customerRepo;
 
-    public void addCustomer(Customer customer) {
-        customerRepo.addCustomer(customer);
-    }
+
 
     public List<Customer> fetchAll() {
         return customerRepo.fetchAll();
     }
 
+    public void addCustomer(Customer customer) {
+        customerRepo.addCustomer(customer);
+    }
+    public void addNewCustomer(Customer customer){
+        customerRepo.addNewCustomer(customer);
+    }
 
     public Customer getCustomerByLicenceNumber(String licenceNumber) {
         return customerRepo.getCustomerByLicenceNumber(licenceNumber);

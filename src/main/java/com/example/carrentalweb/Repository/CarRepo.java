@@ -24,6 +24,7 @@ public class CarRepo {
     public List<Car> fetchAll() {
         String sql = "SELECT registration_number, brand, model, registration_date, km_driven FROM car_table ";
         RowMapper<Car> rowMapper = new BeanPropertyRowMapper<>(Car.class);
+        System.out.println("family car from carRepo");
         return jdbcTemplate.query(sql, rowMapper);
     }
 

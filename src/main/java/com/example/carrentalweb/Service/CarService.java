@@ -22,4 +22,8 @@ public class CarService {
         carRepo.addCar(car);
 
     }
+
+    public Car findCar(String regNum){
+        return carRepo.getCarByRegistrationNumber(regNum);
+    }
 }

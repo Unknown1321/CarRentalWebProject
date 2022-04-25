@@ -7,6 +7,8 @@ public class FamilyCar extends Car {
     private boolean cruiseControl;
     private boolean sevenSeatsOrMore;
 
+    public FamilyCar(){}
+
 
     public FamilyCar(String registrationNumber, String brand, String model, String registrationDate,
                      int kmDriven, boolean manualGear, boolean airCondition, boolean cruiseControl,
@@ -16,6 +18,16 @@ public class FamilyCar extends Car {
         this.airCondition = airCondition;
         this.cruiseControl = cruiseControl;
         this.sevenSeatsOrMore = sevenSeatsOrMore;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+"FamilyCar{" +
+                "manualGear=" + manualGear +
+                ", airCondition=" + airCondition +
+                ", cruiseControl=" + cruiseControl +
+                ", sevenSeatsOrMore=" + sevenSeatsOrMore +
+                '}';
     }
 
     public boolean isManualGear() {

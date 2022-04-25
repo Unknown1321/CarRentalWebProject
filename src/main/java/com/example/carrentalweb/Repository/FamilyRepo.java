@@ -19,7 +19,7 @@ public class FamilyRepo {
     public void addFamilyCar(FamilyCar car){
         String sql = "INSERT INTO family_cars(registration_number, manual_gear, air_condition, cruise_control, seven_seats_or_more) VALUES(?, ?,?,?,?)";
         System.out.println("Debug message!");
-        jdbcTemplate.update(sql,car.getRegistrationNumber(), car.isManualGear(), car.isAirCondition(), car.isCruiseControl(), car.isSevenSeatsOrMore());
+        jdbcTemplate.update(sql,car.getRegistrationNumber(), car.isManual_gear(), car.isAir_condition(), car.isCruise_control(), car.isSeven_seats_or_more());
     }
 
     public List<FamilyCar> fetchAll() {
@@ -38,7 +38,7 @@ public class FamilyRepo {
     public void updateFamilyCar(FamilyCar car) {
         String sql = "UPDATE family_cars SET registration_number = ?, manual_gear = ?, air_condition = ?, " +
                 "cruise_control = ?, seven_seats_or_more = ? WHERE registration_number = ? ";
-        jdbcTemplate.update(sql,car.getRegistrationNumber(), car.isManualGear(), car.isAirCondition(), car.isCruiseControl(), car.isSevenSeatsOrMore());
+        jdbcTemplate.update(sql,car.getRegistrationNumber(), car.isManual_gear(), car.isAir_condition(), car.isCruise_control(), car.isSeven_seats_or_more());
     }
 
     public void deleteFamilyCar(String registrationNumber) {

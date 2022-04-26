@@ -2,12 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Customer</title>
+    <title>View customer</title>
     <link href="/styles/customer.css" rel="stylesheet">
+
 </head>
 <body>
-
-<h1>Hello</h1>
 
 
 <table>
@@ -23,14 +22,12 @@
     <th>Email</th>
     <th>Zip code</th>
     <th>City</th>
-    <th>Actions</th>
-
 
     </thead>
 
     <tbody>
 
-    <tr th:each="customer: ${customers}">
+    <tr th:each="customer: ${customer}">
         <td th:text="${customer.driver_license_number}"></td>
         <td th:text="${customer.driver_since_number}"></td>
         <td th:text="${customer.first_name}"></td>
@@ -40,18 +37,11 @@
         <td th:text="${customer.email}"></td>
         <td th:text="${customer.zip_code}"></td>
         <td th:text="${customer.city}"></td>
-        <td>
-            <a th:href="@{'/update/'+${customer.driver_license_number}}">Update</a>
-            <a th:href="@{'/admin/customer-view/'+${customer.driver_license_number}}">View</a>
-            <a th:href="@{'/admin/customer/'+${customer.driver_license_number}}">Delete</a>
-            <!--            <a th:href="@{/admin/customer/{license-number}(license-number=${customer.driver_license_number})}"-->
-            <!--               class="delete-customer">Remove</a>-->
-        </td>
-
     </tr>
     </tbody>
 
 </table>
+
 
 </body>
 </html>

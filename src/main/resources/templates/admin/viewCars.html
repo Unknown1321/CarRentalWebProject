@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Cars</title>
@@ -27,7 +27,7 @@
         </thead>
         <tbody>
             <tr th:each="familyCar : ${familyCars}">
-                <td th:text="${familyCar.registrationNumber}"/>
+                <td th:text="${familyCar.registrationNumber}"/> </td>
                 <td th:text="${familyCar.brand}"/> </td>
                 <td th:text="${familyCar.model}"/> </td>
                 <td th:text="${familyCar.registrationDate}"/> </td>

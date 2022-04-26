@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update-customer</title>
+</head>
+<body>
+
+<form action="/updateCustomer" method="post">
+
+    <input type="text" name="driver_since_number"  class="text-box" placeholder="Enter driver since number" th:value="${customerUpdate.driver_since_number}"  required>
+    <br>
+    <input type="text" name="first_name" class="text-box" placeholder="Enter first name"th:value="${customerUpdate.first_name}"  required>
+    <br>
+    <input type="text" name="last_name" class="text-box" placeholder="Enter last name" th:value="${customerUpdate.last_name}" required>
+    <br>
+    <input type="text" name="phone_number" class="text-box" placeholder="Enter phone number" th:value="${customerUpdate.phone_number}" required>
+    <br>
+    <input type="text" name="mobile_number" class="text-box" placeholder="Enter mobile phone number"th:value="${customerUpdate.mobile_number}"  required>
+    <br>
+    <input type="text" name="email" class="text-box" placeholder="Enter email" th:value="${customerUpdate.email}" required>
+    <br>
+    <input type="text" name="zip_code" class="text-box" placeholder="Enter zip code"th:value="${customerUpdate.zip_code}"  required>
+    <br>  <input type="submit" id="button-send" value="Save changes" />
+</form>
+
+
+</body>
+</html>

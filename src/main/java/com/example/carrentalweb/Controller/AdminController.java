@@ -47,7 +47,11 @@ public class AdminController {
     @GetMapping("/admin/viewCars")
     public String viewCars(Model model){
         List<FamilyCar> familyCars = familyService.fetchAll();
+        List<LuxuryCar> luxuryCars = luxuryService.fetchAll();
+        List<SportCar> sportCars = sportService.fetchAll();
         model.addAttribute("familyCars", familyCars);
+        model.addAttribute("luxuryCars", luxuryCars);
+        model.addAttribute("sportCars", sportCars);
         return "/admin/viewCars";
     }//view cars only view
 

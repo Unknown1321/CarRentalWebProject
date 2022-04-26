@@ -22,10 +22,12 @@ public class LuxuryRepo {
     }
 
     public List<LuxuryCar> fetchAll() {
-        String sql = "SELECT registration_number, over3000CCM, automaticGear, cruiseControl, leatherSeats FROM luxury_cars ";
+        String sql = ("SELECT * FROM car_table INNER JOIN luxury_cars ON car_table.registration_number = luxury_cars.registration_number");
         RowMapper<LuxuryCar> rowMapper = new BeanPropertyRowMapper<>(LuxuryCar.class);
         return jdbcTemplate.query(sql, rowMapper);
     }
+
+
 
     public LuxuryCar getLuxuryCarByRegistrationNumber(String registrationNumber) {
         String sql = "SELECT * FROM luxury_cars WHERE registration_number = ?";

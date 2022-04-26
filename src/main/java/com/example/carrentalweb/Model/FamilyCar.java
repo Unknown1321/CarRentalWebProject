@@ -2,51 +2,52 @@ package com.example.carrentalweb.Model;
 
 public class FamilyCar extends Car {
 
-    private boolean manual_gear;
-    private boolean air_condition;
-    private boolean cruise_control;
-    private boolean seven_seats_or_more;
+    private boolean manualGear;
+    private boolean airCondition;
+    private boolean cruiseControl;
+    private boolean sevenSeatsOrMore;
+    // commit
 
-    public FamilyCar(){}
-
-
-    public FamilyCar(String registrationNumber, String brand, String model, String registrationDate, int kmDriven, boolean manual_gear, boolean air_condition, boolean cruise_control, boolean seven_seats_or_more) {
-        super(registrationNumber, brand, model, registrationDate, kmDriven);
-        this.manual_gear = manual_gear;
-        this.air_condition = air_condition;
-        this.cruise_control = cruise_control;
-        this.seven_seats_or_more = seven_seats_or_more;
+    public FamilyCar() {
     }
 
-    public boolean isManual_gear() {
-        return manual_gear;
+    public FamilyCar(String brand, String model, String registration_number, String registration_date, int km_driven, boolean manualGear, boolean airCondition, boolean cruiseControl, boolean sevenSeatsOrMore) {
+        super(registration_number, brand, model, registration_date, km_driven);
+        this.manualGear = manualGear;
+        this.airCondition = airCondition;
+        this.cruiseControl = cruiseControl;
+        this.sevenSeatsOrMore = sevenSeatsOrMore;
     }
 
-    public void setManual_gear(boolean manual_gear) {
-        this.manual_gear = manual_gear;
+    public boolean isManualGear() {
+        return manualGear;
     }
 
-    public boolean isAir_condition() {
-        return air_condition;
+    public void setManualGear(boolean manualGear) {
+        this.manualGear = manualGear;
     }
 
-    public void setAir_condition(boolean air_condition) {
-        this.air_condition = air_condition;
+    public boolean isAirCondition() {
+        return airCondition;
     }
 
-    public boolean isCruise_control() {
-        return cruise_control;
+    public void setAirCondition(boolean airCondition) {
+        this.airCondition = airCondition;
     }
 
-    public void setCruise_control(boolean cruise_control) {
-        this.cruise_control = cruise_control;
+    public boolean isCruiseControl() {
+        return cruiseControl;
     }
 
-    public boolean isSeven_seats_or_more() {
-        return seven_seats_or_more;
+    public void setCruiseControl(boolean cruiseControl) {
+        this.cruiseControl = cruiseControl;
     }
 
-    public void setSeven_seats_or_more(boolean seven_seats_or_more) {
-        this.seven_seats_or_more = seven_seats_or_more;
+    public boolean isSevenSeatsOrMore() {
+        return sevenSeatsOrMore;
+    }
+
+    public void setSevenSeatsOrMore(boolean sevenSeatsOrMore) {
+        this.sevenSeatsOrMore = sevenSeatsOrMore;
     }
 }

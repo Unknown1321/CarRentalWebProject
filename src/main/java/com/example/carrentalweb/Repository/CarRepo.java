@@ -18,7 +18,7 @@ public class CarRepo {
 
     public void addCar(Car car){
         String sql = "INSERT INTO car_table(registration_number, brand, model, registration_date, km_driven) VALUES(?,?,?,?,?)";
-        jdbcTemplate.update(sql,car.getRegistrationNumber(), car.getBrand(), car.getModel(), car.getRegistrationDate(), car.getKmDriven());
+        jdbcTemplate.update(sql, car.getRegistrationNumber(), car.getBrand(), car.getModel(), car.getRegistrationDate(), car.getKmDriven());
     }
 
     public List<Car> fetchAll() {

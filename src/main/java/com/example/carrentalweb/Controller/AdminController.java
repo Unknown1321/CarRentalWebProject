@@ -157,16 +157,27 @@ public class AdminController {
         return "admin/view-customer";
     }
 
+//    @GetMapping("/update/{driver_license_number}")
+//    public String updateCustomer(@PathVariable("driver_license_number") String licenseNumber, Model model) {
+//        model.addAttribute("customerUpdate", customerService.getCustomerByLicenceNumber(licenseNumber));
+//        return "admin/update-customer";
+//    }
+//
+//    @PostMapping("/updateCustomer")
+//    public String editCustomer(@ModelAttribute("customerUpdate") Customer customer) {
+//        customerService.updateCustomer(customer.getDriver_license_number(), customer);
+//        return "redirect:admin/customerMenu";
+//    }
+
     @GetMapping("/update/{driver_license_number}")
-    public String updateCustomer(@PathVariable("driver_license_number") String licenseNumber, Model model) {
-        model.addAttribute("customerUpdate", customerService.getCustomerByLicenceNumber(licenseNumber));
+    public String update(@PathVariable("driver_license_number") String licenseNumber, Model model){
+        model.addAttribute("onecustomer",customerService.getCustomerByLicenceNumber(licenseNumber));
         return "admin/update-customer";
     }
-
     @PostMapping("/updateCustomer")
-    public String editCustomer(@ModelAttribute Customer customer) {
+    public String updatePerson(@ModelAttribute Customer customer){
         customerService.updateCustomer(customer.getDriver_license_number(), customer);
-        return "redirect:admin/customerMenu";
+        return "redirect:/admin/customerMenu";
     }
 
 

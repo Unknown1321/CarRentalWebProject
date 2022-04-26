@@ -41,7 +41,8 @@
         <td th:text="${customer.zip_code}"></td>
         <td th:text="${customer.city}"></td>
         <td>
-            <a th:href="@{'/update/'+${customer.driver_license_number}}">Update</a>
+<!--            th:href="@{/students/update/{id} (id=${student.id})}-->
+            <a th:href="@{/update/{driver_license_number} (driver_license_number=${customer.driver_license_number})}">Update</a>
             <a th:href="@{'/admin/customer-view/'+${customer.driver_license_number}}">View</a>
             <a th:href="@{'/admin/customer/'+${customer.driver_license_number}}">Delete</a>
             <!--            <a th:href="@{/admin/customer/{license-number}(license-number=${customer.driver_license_number})}"-->

@@ -2,10 +2,11 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Cars</title>
+    <title>Delete Car</title>
     <link href="/styles/viewCars.css" rel="stylesheet">
 </head>
 <body>
+
 <h3>Family cars</h3>
 
 <table>
@@ -35,8 +36,8 @@
         <td th:text="${familyCar.cruiseControl}"/> </td>
         <td th:text="${familyCar.sevenSeatsOrMore}"/> </td>
         <td>
-            <a th:href="@{'/admin/updateCarReg/'+${familyCar.registrationNumber}}">
-            <button>Update car</button>
+            <a th:href="@{'/admin/deleteCarReg/'+${familyCar.registrationNumber}}">
+                <button>Delete car</button>
             </a>
         </td>
     </tr>
@@ -73,8 +74,8 @@
         <td th:text="${luxuryCar.automaticGear}"/> </td>
         <td th:text="${luxuryCar.cruiseControl}"/> </td>
         <td th:text="${luxuryCar.leatherSeats}"/> </td>
-        <td><a th:href="@{'/admin/updateCarReg/'+${luxuryCar.registrationNumber}}">
-            <button>Update car</button>
+        <td><a th:href="@{'/admin/deleteCarReg/'+${luxuryCar.registrationNumber}}">
+            <button>Delete car</button>
         </a></td>
     </tr>
     </tbody>
@@ -105,13 +106,12 @@
         <td th:text="${sportCar.kmDriven}"/> </td>
         <td th:text="${sportCar.manualGear}"/> </td>
         <td th:text="${sportCar.over200HP}"/> </td>
-        <td><a th:href="@{'/admin/updateCarReg/'+${sportCar.registrationNumber}}">
-            <button>Update car</button>
+        <td><a th:href="@{'/admin/deleteCarReg/'+${sportCar.registrationNumber}}">
+            <button>Delete car</button>
         </a></td>
     </tr>
     </tbody>
 
 </table>
-
 </body>
 </html>

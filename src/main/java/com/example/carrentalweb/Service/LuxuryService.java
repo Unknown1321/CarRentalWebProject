@@ -21,4 +21,8 @@ public class LuxuryService {
     public void addNew (LuxuryCar car){
         luxuryRepo.addLuxuryCar(car);
     }
+
+    public void deleteCar(LuxuryCar luxuryCar) {
+        luxuryRepo.deleteLuxuryCar(luxuryCar.getRegistrationNumber());
+    }
 }

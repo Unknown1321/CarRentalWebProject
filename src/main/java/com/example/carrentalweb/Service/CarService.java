@@ -30,4 +30,8 @@ public class CarService {
     public void updateByReg (String reg, Car car){
         carRepo.updateCar(reg, car);
     }
+
+public void deleteCar (Car car){
+    carRepo.deleteCar(car.getRegistrationNumber(), car);}
+
 }

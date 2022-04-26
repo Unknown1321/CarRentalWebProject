@@ -41,7 +41,7 @@ public class CarRepo {
         jdbcTemplate.update(sql, car.getRegistrationNumber(), car.getBrand(), car.getModel(), car.getRegistrationDate(), car.getKmDriven(), reg);
     }
 
-    public void deleteCar(String registrationNumber) {
+    public void deleteCar(String registrationNumber, Car car) {
         String sql = "DELETE FROM car_table WHERE registration_number =?";
         jdbcTemplate.update(sql, registrationNumber);
     }

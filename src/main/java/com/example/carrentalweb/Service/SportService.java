@@ -20,4 +20,8 @@ public class SportService {
     public void addNew(SportCar sportCar){
         sportRepo.addSportCar(sportCar);
     }
+
+    public void deleteCar(SportCar sportCar) {
+        sportRepo.deleteSportCar(sportCar.getRegistrationNumber());
+    }
 }

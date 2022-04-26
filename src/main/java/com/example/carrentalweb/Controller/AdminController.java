@@ -58,7 +58,11 @@ public class AdminController {
     @GetMapping("/admin/updateCar")
     public String updateCar(Model model) {
         List<FamilyCar> familyCars = familyService.fetchAll();
+        List<LuxuryCar> luxuryCars = luxuryService.fetchAll();
+        List<SportCar> sportCars = sportService.fetchAll();
         model.addAttribute("familyCars", familyCars);
+        model.addAttribute("luxuryCars", luxuryCars);
+        model.addAttribute("sportCars", sportCars);
         return "/admin/updateCar";
     }//view cars only for updating method
 
@@ -125,6 +129,59 @@ public class AdminController {
         carService.addNew(sportCar);
         sportService.addNew(sportCar);
         return "redirect:/";
+    }
+
+    @GetMapping("/admin/deleteCar")
+    public String deleteCar(Model model) {
+        List<FamilyCar> familyCars = familyService.fetchAll();
+        List<LuxuryCar> luxuryCars = luxuryService.fetchAll();
+        List<SportCar> sportCars = sportService.fetchAll();
+        model.addAttribute("familyCars", familyCars);
+        model.addAttribute("luxuryCars", luxuryCars);
+        model.addAttribute("sportCars", sportCars);
+        return "/admin/deleteCar";
+    }//Choose type
+
+    // delete family GET
+    @GetMapping("/admin/deleteFamilyCar")
+    public String deleteFamily() {
+        return "/admin/deleteFamily";
+    }
+
+    // delete family POST
+    @PostMapping("/admin/deleteFamilyCar")
+    public String deleteCar(@ModelAttribute FamilyCar familyCar){
+        carService.deleteCar(familyCar);
+        familyService.deleteCar(familyCar);
+        return "/admin/carsMenu";
+    }
+
+    // delete luxury GET
+    @GetMapping("/admin/deleteLuxuryCar")
+    public String deleteLuxury() {
+        return "/admin/deleteLuxury";
+    }
+
+    // delete luxury POST
+    @PostMapping("/admin/deleteLuxuryCar")
+    public String deleteCar(@ModelAttribute LuxuryCar luxuryCar){
+        carService.deleteCar(luxuryCar);
+        luxuryService.deleteCar(luxuryCar);
+        return "/admin/carsMenu";
+    }
+
+    // delete sport GET
+    @GetMapping("/admin/deleteSportCar")
+    public String deleteSport() {
+        return "/admin/deleteSport";
+    }
+
+    // delete sport POST
+    @PostMapping("/admin/deleteSportCar")
+    public String deleteCar(@ModelAttribute SportCar sportCar){
+        carService.deleteCar(sportCar);
+        sportService.deleteCar(sportCar);
+        return "/admin/carsMenu";
     }
 
 

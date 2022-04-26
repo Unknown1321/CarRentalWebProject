@@ -26,4 +26,8 @@ public class FamilyService {
     public void updateFamily (String reg, FamilyCar familyCar) {
         familyRepo.updateFamilyCar(reg, familyCar);
     }
+
+    public void deleteCar(FamilyCar familyCar) {
+        familyRepo.deleteFamilyCar(familyCar.getRegistrationNumber());
+    }
 }

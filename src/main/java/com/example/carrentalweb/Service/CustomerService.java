@@ -24,16 +24,13 @@ public class CustomerService {
     public void addCustomer(Customer customer) {
         customerRepo.addCustomer(customer);
     }
-    public void addNewCustomer(Customer customer){
-        customerRepo.addNewCustomer(customer);
-    }
 
     public Customer getCustomerByLicenceNumber(String licenceNumber) {
         return customerRepo.getCustomerByLicenceNumber(licenceNumber);
     }
 
-    public void updateCustomer(Customer customer) {
-        customerRepo.updateCustomer(customer);
+    public void updateCustomer(String licensenumber, Customer customer) {
+        customerRepo.updateCustomer(licensenumber,customer);
     }
 
     public void deleteCustomer(String licenceNumber) {

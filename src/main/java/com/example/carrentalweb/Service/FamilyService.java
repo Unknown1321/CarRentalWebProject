@@ -17,7 +17,7 @@ public class FamilyService {
         return familyRepo.fetchAll();
     }
 
-    public void addNew (FamilyCar familyCar){
+    public void addNew(FamilyCar familyCar){
         familyRepo.addFamilyCar(familyCar);
     }
     public FamilyCar findFamily(String regNum){

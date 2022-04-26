@@ -1,9 +1,6 @@
 package com.example.carrentalweb.Controller;
 
-import com.example.carrentalweb.Model.Customer;
-import com.example.carrentalweb.Model.FamilyCar;
-import com.example.carrentalweb.Model.LuxuryCar;
-import com.example.carrentalweb.Model.SportCar;
+import com.example.carrentalweb.Model.*;
 import com.example.carrentalweb.Service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -91,8 +88,8 @@ public class AdminController {
 
     @PostMapping("/admin/newFamily")
         public String newFamily(@ModelAttribute FamilyCar familyCar){
-        System.out.println("ENTER RIGTH METHOD");
-            carService.addnew(familyCar);
+        System.out.println("ENTER RIGHT METHOD");
+            carService.addNew(familyCar);
             familyService.addNew(familyCar);
         System.out.println(familyCar);
             return "redirect:/";
@@ -106,7 +103,7 @@ public class AdminController {
     //new luxury POST
     @PostMapping("/admin/newLuxury")
     public String newLuxury(@ModelAttribute LuxuryCar luxuryCar){
-        carService.addnew(luxuryCar);
+        carService.addNew(luxuryCar);
         luxuryService.addNew(luxuryCar);
         return "redirect:/";
     }
@@ -118,7 +115,7 @@ public class AdminController {
     //new sport POST
     @PostMapping("/admin/newSport")
     public String newSport (@ModelAttribute SportCar sportCar){
-        carService.addnew(sportCar);
+        carService.addNew(sportCar);
         sportService.addNew(sportCar);
         return "redirect:/";
     }
@@ -142,4 +139,5 @@ public class AdminController {
             model.addAttribute("customers",customerService.fetchAll());
             return "admin/customer";
     }
+
 }

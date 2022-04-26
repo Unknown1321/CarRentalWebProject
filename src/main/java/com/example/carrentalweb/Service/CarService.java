@@ -18,7 +18,7 @@ public class CarService {
         return carRepo.fetchAll();
     }
 
-    public void addnew (Car car){
+    public void addNew(Car car){
         carRepo.addCar(car);
 
     }

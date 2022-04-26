@@ -22,7 +22,7 @@
                 <th>Air-Cond.</th>
                 <th>CruiseContr.</th>
                 <th>>7Seats</th>
-                <th></th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -36,7 +36,12 @@
                 <td th:text="${familyCar.airCondition}"/> </td>
                 <td th:text="${familyCar.cruiseControl}"/> </td>
                 <td th:text="${familyCar.sevenSeatsOrMore}"/> </td>
-                <td><button>Rent car</button></td>
+                <td>
+                    <a th:href="@{'/update/'+${familyCar.registrationNumber}}">Update</a>
+                    <a th:href="@{'/admin/car-viewFamily/'+${familyCar.registrationNumber}}">View</a>
+                    <a th:href="@{'/admin/car/'+${familyCar.registrationNumber}}">Delete</a>
+                </td>
+
             </tr>
         </tbody>
 
@@ -57,7 +62,7 @@
             <th>AutoGear</th>
             <th>CruiseContr.</th>
             <th>LSeats</th>
-            <th></th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -71,7 +76,11 @@
             <td th:text="${luxuryCar.automaticGear}"/> </td>
             <td th:text="${luxuryCar.cruiseControl}"/> </td>
             <td th:text="${luxuryCar.leatherSeats}"/> </td>
-            <td><button>Rent car</button></td>
+            <td>
+                <a th:href="@{'/update/'+${luxuryCar.registrationNumber}}">Update</a>
+                <a th:href="@{'/admin/car-viewLuxury/'+${luxuryCar.registrationNumber}}">View</a>
+                <a th:href="@{'/admin/car/'+${luxuryCar.registrationNumber}}">Delete</a>
+            </td>
         </tr>
         </tbody>
 
@@ -89,7 +98,7 @@
             <th>kmdriven</th>
             <th>manualGear</th>
             <th>over200HP</th>
-            <th></th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -101,7 +110,11 @@
             <td th:text="${sportCar.kmDriven}"/> </td>
             <td th:text="${sportCar.manualGear}"/> </td>
             <td th:text="${sportCar.over200HP}"/> </td>
-            <td><button>Rent car</button></td>
+            <td>
+                <a th:href="@{'/update/'+${sportCar.registrationNumber}}">Update</a>
+                <a th:href="@{'/admin/car-viewSport/'+${sportCar.registrationNumber}}">View</a>
+                <a th:href="@{'/admin/car/'+${sportCar.registrationNumber}}">Delete</a>
+            </td>
         </tr>
         </tbody>
 

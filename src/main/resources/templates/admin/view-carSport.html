@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View car sport</title>
+    <link href="/styles/viewCars.css" rel="stylesheet">
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th>RegNumb</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>RegDate</th>
+        <th>kmdriven</th>
+        <th>manualGear</th>
+        <th>over200HP</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="sportCar : ${sportCar}">
+        <td th:text="${sportCar.registrationNumber}"/>
+        <td th:text="${sportCar.brand}"/> </td>
+        <td th:text="${sportCar.model}"/> </td>
+        <td th:text="${sportCar.registrationDate}"/> </td>
+        <td th:text="${sportCar.kmDriven}"/> </td>
+        <td th:text="${sportCar.manualGear}"/> </td>
+        <td th:text="${sportCar.over200HP}"/> </td>
+
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>

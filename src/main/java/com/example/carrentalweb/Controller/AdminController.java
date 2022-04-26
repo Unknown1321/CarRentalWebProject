@@ -131,29 +131,10 @@ public class AdminController {
         return "redirect:/";
     }
 
-    @GetMapping("/admin/deleteCar")
-    public String deleteCar(Model model) {
-        List<FamilyCar> familyCars = familyService.fetchAll();
-        List<LuxuryCar> luxuryCars = luxuryService.fetchAll();
-        List<SportCar> sportCars = sportService.fetchAll();
-        model.addAttribute("familyCars", familyCars);
-        model.addAttribute("luxuryCars", luxuryCars);
-        model.addAttribute("sportCars", sportCars);
-        return "/admin/deleteCar";
-    }//Choose type
-
     // delete family GET
     @GetMapping("/admin/deleteFamilyCar")
     public String deleteFamily() {
         return "/admin/deleteFamily";
-    }
-
-    // delete family POST
-    @PostMapping("/admin/deleteFamilyCar")
-    public String deleteCar(@ModelAttribute FamilyCar familyCar){
-        carService.deleteCar(familyCar);
-        familyService.deleteCar(familyCar);
-        return "/admin/carsMenu";
     }
 
     // delete luxury GET
@@ -162,27 +143,42 @@ public class AdminController {
         return "/admin/deleteLuxury";
     }
 
-    // delete luxury POST
-    @PostMapping("/admin/deleteLuxuryCar")
-    public String deleteCar(@ModelAttribute LuxuryCar luxuryCar){
-        carService.deleteCar(luxuryCar);
-        luxuryService.deleteCar(luxuryCar);
-        return "/admin/carsMenu";
-    }
-
     // delete sport GET
     @GetMapping("/admin/deleteSportCar")
     public String deleteSport() {
         return "/admin/deleteSport";
     }
 
-    // delete sport POST
-    @PostMapping("/admin/deleteSportCar")
-    public String deleteCar(@ModelAttribute SportCar sportCar){
-        carService.deleteCar(sportCar);
-        sportService.deleteCar(sportCar);
-        return "/admin/carsMenu";
+    @GetMapping("admin/car-viewFamily/{registrationNumber}")
+    public String viewCarFamily(@PathVariable("registrationNumber") String registrationNumber, Model model) {
+        model.addAttribute("car", carService.findCar(registrationNumber));
+        model.addAttribute("familyCar", familyService.findFamily(registrationNumber));
+        return "admin/view-carFamily";
     }
+
+    @GetMapping("admin/car-viewLuxury/{registrationNumber}")
+    public String viewCarLuxury(@PathVariable("registrationNumber") String registrationNumber, Model model) {
+        model.addAttribute("car", carService.findCar(registrationNumber));
+        model.addAttribute("luxuryCar", luxuryService.findLuxury(registrationNumber));
+        return "admin/view-carLuxury";
+    }
+
+    @GetMapping("admin/car-viewSport/{registrationNumber}")
+    public String viewCarSport(@PathVariable("registrationNumber") String registrationNumber, Model model) {
+        model.addAttribute("car", carService.findCar(registrationNumber));
+        model.addAttribute("sportCar", sportService.findSport(registrationNumber));
+        return "admin/view-carSport";
+    }
+
+    @GetMapping("/admin/car/{registrationNumber}")
+    public String deleteCar(@PathVariable("registrationNumber") String registrationNumber) {
+        carService.deleteCar(registrationNumber);
+        familyService.deleteCar(registrationNumber);
+        luxuryService.deleteCar(registrationNumber);
+        sportService.deleteCar(registrationNumber);
+        return "redirect:/admin/carsMenu";
+    }
+
 
 
     @GetMapping("/admin/customer")

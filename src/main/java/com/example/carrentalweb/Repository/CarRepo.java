@@ -28,6 +28,7 @@ public class CarRepo {
         return jdbcTemplate.query(sql, rowMapper);
     }
 
+
     public Car getCarByRegistrationNumber(String registrationNumber) {
         String sql = "SELECT * FROM car_table WHERE registration_number = ?";
         RowMapper<Car> rowMapper = new BeanPropertyRowMapper<>(Car.class);
@@ -41,7 +42,7 @@ public class CarRepo {
         jdbcTemplate.update(sql, car.getRegistrationNumber(), car.getBrand(), car.getModel(), car.getRegistrationDate(), car.getKmDriven(), reg);
     }
 
-    public void deleteCar(String registrationNumber, Car car) {
+    public void deleteCar(String registrationNumber) {
         String sql = "DELETE FROM car_table WHERE registration_number =?";
         jdbcTemplate.update(sql, registrationNumber);
     }

@@ -1,5 +1,6 @@
 package com.example.carrentalweb.Service;
 
+import com.example.carrentalweb.Model.LuxuryCar;
 import com.example.carrentalweb.Model.SportCar;
 import com.example.carrentalweb.Repository.SportRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,11 @@ public class SportService {
         sportRepo.addSportCar(sportCar);
     }
 
-    public void deleteCar(SportCar sportCar) {
-        sportRepo.deleteSportCar(sportCar.getRegistrationNumber());
+    public SportCar findSport(String regNum){
+        return sportRepo.getSportCarByRegistrationNumber(regNum);
+    }
+
+    public void deleteCar(String registrationNumber) {
+        sportRepo.deleteSportCar(registrationNumber);
     }
 }

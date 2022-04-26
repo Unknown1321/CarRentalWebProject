@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View luxury Car</title>
+    <link href="/styles/viewCars.css" rel="stylesheet">
+</head>
+<body>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>RegNumb</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>RegDate</th>
+        <th>kmdriven</th>
+        <th>>3000CCM</th>
+        <th>AutoGear</th>
+        <th>CruiseContr.</th>
+        <th>LSeats</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="luxuryCar : ${luxuryCar}">
+        <td th:text="${luxuryCar.registrationNumber}"/>
+        <td th:text="${luxuryCar.brand}"/> </td>
+        <td th:text="${luxuryCar.model}"/> </td>
+        <td th:text="${luxuryCar.registrationDate}"/> </td>
+        <td th:text="${luxuryCar.kmDriven}"/> </td>
+        <td th:text="${luxuryCar.over3000CCM}"/> </td>
+        <td th:text="${luxuryCar.automaticGear}"/> </td>
+        <td th:text="${luxuryCar.cruiseControl}"/> </td>
+        <td th:text="${luxuryCar.leatherSeats}"/> </td>
+
+    </tr>
+    </tbody>
+
+</table>
+</body>
+</html>

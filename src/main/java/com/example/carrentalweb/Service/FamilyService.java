@@ -27,7 +27,7 @@ public class FamilyService {
         familyRepo.updateFamilyCar(reg, familyCar);
     }
 
-    public void deleteCar(FamilyCar familyCar) {
-        familyRepo.deleteFamilyCar(familyCar.getRegistrationNumber());
+    public void deleteCar(String registrationNumber) {
+        familyRepo.deleteFamilyCar(registrationNumber);
     }
 }

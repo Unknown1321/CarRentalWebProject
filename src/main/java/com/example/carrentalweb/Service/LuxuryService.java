@@ -1,6 +1,7 @@
 package com.example.carrentalweb.Service;
 
 import com.example.carrentalweb.Model.Car;
+import com.example.carrentalweb.Model.FamilyCar;
 import com.example.carrentalweb.Model.LuxuryCar;
 import com.example.carrentalweb.Repository.LuxuryRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,11 @@ public class LuxuryService {
         luxuryRepo.addLuxuryCar(car);
     }
 
-    public void deleteCar(LuxuryCar luxuryCar) {
-        luxuryRepo.deleteLuxuryCar(luxuryCar.getRegistrationNumber());
+    public LuxuryCar findLuxury(String regNum){
+        return luxuryRepo.getLuxuryCarByRegistrationNumber(regNum);
+    }
+
+    public void deleteCar(String registrationNumber) {
+        luxuryRepo.deleteLuxuryCar(registrationNumber);
     }
 }

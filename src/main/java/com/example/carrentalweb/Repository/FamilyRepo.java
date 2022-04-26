@@ -31,12 +31,24 @@ public class FamilyRepo {
     }
 
     public FamilyCar getFamilyCarByRegistrationNumber(String registrationNumber) {
-        String sql = "SELECT * FROM family_cars WHERE registration_number = ?";
+        String sql = "SELECT brand, model, registration_date, km_driven, family_cars.manual_gear, family_cars.air_condition, family_cars.cruise_control, family_cars.seven_seats_or_more" +
+                " FROM car_table INNER JOIN family_cars ON car_table.registration_number = family_cars.registration_number" +
+                " WHERE registration_number = ?";
         RowMapper<FamilyCar> rowMapper = new BeanPropertyRowMapper<>(FamilyCar.class);
         FamilyCar familyCar = jdbcTemplate.queryForObject(sql, rowMapper, registrationNumber);
         return familyCar;
     }
 
+/*public Customer getCustomerByLicenceNumber(String licenceNumber) {
+        String sql = "SELECT driver_license_number, driver_since_number, first_name, last_name, " +
+                "phone_number, mobile_number, email, zip_table.zip_code, " +
+                "city FROM customer_table " +
+                "INNER JOIN zip_table ON customer_table.zip_code = " +
+                "zip_table.zip_code WHERE driver_license_number = ?";
+        RowMapper<Customer> rowMapper = new BeanPropertyRowMapper<>(Customer.class);
+        Customer customer = jdbcTemplate.queryForObject(sql, rowMapper, licenceNumber);
+        return customer;
+    }*/
     public void updateFamilyCar(String reg, FamilyCar car) {
         String sql = "UPDATE family_cars SET registration_number = ?, manual_gear = ?, air_condition = ?, " +
                 "cruise_control = ?, seven_seats_or_more = ? WHERE registration_number = ? ";

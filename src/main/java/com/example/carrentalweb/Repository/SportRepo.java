@@ -22,7 +22,7 @@ public class SportRepo {
     }
 
     public List<SportCar> fetchAll() {
-        String sql = "SELECT registration_number, manualGear, over200HP FROM sport_cars ";
+        String sql = ("SELECT * FROM car_table INNER JOIN sport_cars ON car_table.registration_number = sport_cars.registration_number");
         RowMapper<SportCar> rowMapper = new BeanPropertyRowMapper<>(SportCar.class);
         return jdbcTemplate.query(sql, rowMapper);
     }

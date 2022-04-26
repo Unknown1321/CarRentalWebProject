@@ -42,6 +42,70 @@
 
     </table>
 
+    <br>
+    <h3>Luxury cars</h3>
+
+    <table>
+        <thead>
+        <tr>
+            <th>RegNumb</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>RegDate</th>
+            <th>kmdriven</th>
+            <th>>3000CCM</th>
+            <th>AutoGear</th>
+            <th>CruiseContr.</th>
+            <th>LSeats</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="luxuryCar : ${luxuryCars}">
+            <td th:text="${luxuryCar.registrationNumber}"/>
+            <td th:text="${luxuryCar.brand}"/> </td>
+            <td th:text="${luxuryCar.model}"/> </td>
+            <td th:text="${luxuryCar.registrationDate}"/> </td>
+            <td th:text="${luxuryCar.kmDriven}"/> </td>
+            <td th:text="${luxuryCar.over3000CCM}"/> </td>
+            <td th:text="${luxuryCar.automaticGear}"/> </td>
+            <td th:text="${luxuryCar.cruiseControl}"/> </td>
+            <td th:text="${luxuryCar.leatherSeats}"/> </td>
+            <td><button>Rent car</button></td>
+        </tr>
+        </tbody>
+
+    </table>
+
+    <br>
+    <h3>Sport cars</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>RegNumb</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>RegDate</th>
+            <th>kmdriven</th>
+            <th>manualGear</th>
+            <th>over200HP</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="sportCar : ${sportCars}">
+            <td th:text="${sportCar.registrationNumber}"/>
+            <td th:text="${sportCar.brand}"/> </td>
+            <td th:text="${sportCar.model}"/> </td>
+            <td th:text="${sportCar.registrationDate}"/> </td>
+            <td th:text="${sportCar.kmDriven}"/> </td>
+            <td th:text="${sportCar.manualGear}"/> </td>
+            <td th:text="${sportCar.over200HP}"/> </td>
+            <td><button>Rent car</button></td>
+        </tr>
+        </tbody>
+
+    </table>
 
 </div>
 

@@ -27,6 +27,9 @@ public class AdminController {
     @Autowired
     CustomerService customerService;
 
+    @Autowired
+    RentalService rentalService;
+
 
     @GetMapping("/admin")
     public String adminMain() {
@@ -165,30 +168,24 @@ public class AdminController {
 
     @GetMapping("admin/car-viewFamily/{registrationNumber}")
     public String viewCarFamily(@PathVariable("registrationNumber") String registrationNumber, Model model) {
-//        model.addAttribute("car", carService.findCar(registrationNumber));
+        model.addAttribute("car", carService.findCar(registrationNumber));
         model.addAttribute("familyCar", familyService.findFamily(registrationNumber));
         return "admin/view-carFamily";
     }
 
     @GetMapping("admin/car-viewLuxury/{registrationNumber}")
     public String viewCarLuxury(@PathVariable("registrationNumber") String registrationNumber, Model model) {
-//        model.addAttribute("car", carService.findCar(registrationNumber));
+        model.addAttribute("car", carService.findCar(registrationNumber));
         model.addAttribute("luxuryCar", luxuryService.findLuxury(registrationNumber));
         return "admin/view-carLuxury";
     }
 
     @GetMapping("admin/car-viewSport/{registrationNumber}")
     public String viewCarSport(@PathVariable("registrationNumber") String registrationNumber, Model model) {
-//        model.addAttribute("car", carService.findCar(registrationNumber));
+        model.addAttribute("car", carService.findCar(registrationNumber));
         model.addAttribute("sportCar", sportService.findSport(registrationNumber));
         return "admin/view-carSport";
     }
-
-//    @GetMapping("admin/customer-view/{driver_license_number}")
-//    public String viewOne(@PathVariable("driver_license_number") String licenseNumber, Model model) {
-//        model.addAttribute("customer", customerService.getCustomerByLicenceNumber(licenseNumber));
-//        return "admin/view-customer";
-//    }
 
     @GetMapping("/admin/car/{registrationNumber}")
     public String deleteCar(@PathVariable("registrationNumber") String registrationNumber) {
@@ -256,4 +253,36 @@ public class AdminController {
     }
 }
 
+    @GetMapping("/admin/rentalMenu")
+    public String rentalMenu() {
+        return "/admin/rentalMenu";
+    }//Rental menu
+
+    @GetMapping("admin/new-rental")
+    public String newRental(){
+        return "admin/new-rental";
+    }
+
+    @PostMapping("admin/new-rental")
+    public String newRental(@ModelAttribute Rental rental){
+        rentalService.addRental(rental);
+        return "redirect:/rentalMenu";
+    }
+
+    /*@GetMapping("/admin/view-rental/{rental_id}")
+    public String viewRental(@PathVariable("rental_id") int rentalId, String registrationNumber, String licensenumber, Model model){
+        model.addAttribute("car", carService.findCar(registrationNumber));
+        model.addAttribute("customer", customerService.getCustomerByLicenceNumber(licensenumber));
+        model.addAttribute("rental", rentalService.getRentalByRentalId(rentalId));
+        return "/admin/view-rental";
+    }*/
+
+    @GetMapping("/admin/view-rental")
+    public String viewRental(Model model) {
+        List<Rental> rental = rentalService.fetchAll();
+        model.addAttribute("rental", rental);
+        return "admin/view-rental";
+    }
+
+}
 

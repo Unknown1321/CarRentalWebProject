@@ -46,18 +46,17 @@ public class CustomerRepo {
         return customer;
     }
 
-    public void updateCustomer(String licensenumber, Customer customer) {
-        String sql = "UPDATE customer_table SET driver_since_number = ?, first_name = ?,last_name = ?, phone_number = ?, mobile_number = ?, email = ? WHERE driver_license_number = ?";
+    public void updateCustomer(String license, Customer customer) {
+        String sql = "UPDATE customer_table SET driver_since_number = ?, first_name = ?,last_name = ?, phone_number = ?, mobile_number = ?, email = ?, zip_code = ?  WHERE driver_license_number = ?";
         jdbcTemplate.update(sql, customer.getDriver_since_number(),
                 customer.getFirst_name(), customer.getLast_name(), customer.getPhone_number(), customer.getMobile_number(),
-                customer.getEmail(),customer.getDriver_license_number());
+                customer.getEmail(), customer.getZip_code(), customer.getDriver_license_number());
     }
 
     public void deleteCustomer(String licenceNumber) {
         String sql = "DELETE FROM customer_table WHERE driver_license_number = ?";
         jdbcTemplate.update(sql, licenceNumber);
     }
-
 }
 
 /*<table>

@@ -28,7 +28,7 @@ public class SportRepo {
     }
 
     public SportCar getSportCarByRegistrationNumber(String registrationNumber) {
-        String sql = "SELECT * FROM sport_cars WHERE registration_number = ?";
+        String sql = "SELECT * FROM car_table SELECT manual_gear, over200HP WHERE registration_number = ?";
         RowMapper<SportCar> rowMapper = new BeanPropertyRowMapper<>(SportCar.class);
         SportCar car = jdbcTemplate.queryForObject(sql, rowMapper, registrationNumber);
         return car;

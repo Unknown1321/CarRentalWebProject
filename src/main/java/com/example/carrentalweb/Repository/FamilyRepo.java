@@ -26,7 +26,6 @@ public class FamilyRepo {
         String sql = ("SELECT * FROM car_table INNER JOIN family_cars ON car_table.registration_number = family_cars.registration_number");
 //        String sql = "SELECT registration_number, manual_gear, air_condition, cruise_control, seven_seats_or_more FROM family_cars ";
         RowMapper<FamilyCar> rowMapper = new BeanPropertyRowMapper<>(FamilyCar.class);
-        System.out.println("family cars read! ");
         return jdbcTemplate.query(sql, rowMapper);
     }
 

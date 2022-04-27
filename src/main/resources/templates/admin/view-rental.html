@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>View rental</title>
+</head>
+<body>
+
+<table>
+
+    <thead>
+
+    <th>Rental id:</th>
+    <th>Registration Number:</th>
+    <th>Driver licence:</th>
+    <th>Rental Date from</th>
+    <th>Rental Date to</th>
+    <th>Max Km</th>
+
+    </thead>
+
+    <tbody>
+
+    <tr th:each="rental: ${rental}">
+        <td th:text="${rental.fromDateAndTime}"></td>
+        <td th:text="${rental.toDateAndTime}"></td>
+        <td th:text="${rental.maxKm}"></td>
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>

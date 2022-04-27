@@ -27,6 +27,9 @@ public class AdminController {
     @Autowired
     CustomerService customerService;
 
+    @Autowired
+    RentalService rentalService;
+
 
     @GetMapping("/admin")
     public String adminMain() {
@@ -235,5 +238,36 @@ public class AdminController {
         return "redirect:/admin/customerMenu";
     }
 
+    @GetMapping("/admin/rentalMenu")
+    public String rentalMenu() {
+        return "/admin/rentalMenu";
+    }//Rental menu
+
+    @GetMapping("admin/new-rental")
+    public String newRental(){
+        return "admin/new-rental";
+    }
+
+    @PostMapping("admin/new-rental")
+    public String newRental(@ModelAttribute Rental rental){
+        rentalService.addRental(rental);
+        return "redirect:/rentalMenu";
+    }
+
+    /*@GetMapping("/admin/view-rental/{rental_id}")
+    public String viewRental(@PathVariable("rental_id") int rentalId, String registrationNumber, String licensenumber, Model model){
+        model.addAttribute("car", carService.findCar(registrationNumber));
+        model.addAttribute("customer", customerService.getCustomerByLicenceNumber(licensenumber));
+        model.addAttribute("rental", rentalService.getRentalByRentalId(rentalId));
+        return "/admin/view-rental";
+    }*/
+
+    @GetMapping("/admin/view-rental")
+    public String viewRental(Model model) {
+        List<Rental> rental = rentalService.fetchAll();
+        model.addAttribute("rental", rental);
+        return "admin/view-rental";
+    }
 
 }
+

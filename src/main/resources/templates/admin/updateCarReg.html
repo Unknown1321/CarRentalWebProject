@@ -6,24 +6,24 @@
 </head>
 <body>
 <h3>Register car</h3>
-<form action="/admin/updateCarReg" method="post">
-    <input type="text" name="registrationNumber" class="text-box" th:value="${car.registrationNumber}" required>
+<form action="/updateCar" method="post">
+    <input type="text" name="registrationNumber" class="text-box" th:value="${updateFamilyCar.registrationNumber}" required>
     <br>
-    <input type="text" name="brand" class="text-box"  th:value="${car.brand}"  required>
+    <input type="text" name="brand" class="text-box"  th:value="${updateFamilyCar.brand}"  required>
     <br>
-    <input type="text" name="model" class="text-box"  th:value="${car.model}"  required>
+    <input type="text" name="model" class="text-box"  th:value="${updateFamilyCar.model}"  required>
     <br>
-    <input type="text" name="registrationDate" class="text-box" th:value="${car.registrationDate}" required>
+    <input type="text" name="registrationDate" class="text-box" th:value="${updateFamilyCar.registrationDate}" required>
     <br>
-    <input type="text" name="kmDriven" class="text-box" th:value="${car.kmDriven}" required>
+    <input type="text" name="kmDriven" class="text-box" th:value="${updateFamilyCar.kmDriven}" required>
     <br>
-    <input type="text" name="manualGear" class="text-box"  th:value="${car.manualGear}"  required>
+    <input type="text" name="manualGear" class="text-box"  th:value="${updateFamilyCar.manualGear}"  required>
     <br>
-    <input type="text" name="airCondition" class="text-box"  th:value="${car.airCondition}"  required>
+    <input type="text" name="airCondition" class="text-box"  th:value="${updateFamilyCar.airCondition}"  required>
     <br>
-    <input type="text" name="cruiseControl" class="text-box"  th:value="${car.cruiseControl}"  required>
+    <input type="text" name="cruiseControl" class="text-box"  th:value="${updateFamilyCar.cruiseControl}"  required>
     <br>
-    <input type="text" name="sevenSeatsOrMore" class="text-box"  th:value="${car.sevenSeatsOrMore}"  required>
+    <input type="text" name="sevenSeatsOrMore" class="text-box"  th:value="${updateFamilyCar.sevenSeatsOrMore}"  required>
     <br>
     <input type="submit" id="button-send" value="Save changes" />
 </form>

@@ -55,19 +55,8 @@ public class AdminController {
         return "/admin/viewCars";
     }//view cars only view
 
-    @GetMapping("/admin/updateCar")
-    public String updateCar(Model model) {
-        List<FamilyCar> familyCars = familyService.fetchAll();
-        List<LuxuryCar> luxuryCars = luxuryService.fetchAll();
-        List<SportCar> sportCars = sportService.fetchAll();
-        model.addAttribute("familyCars", familyCars);
-        model.addAttribute("luxuryCars", luxuryCars);
-        model.addAttribute("sportCars", sportCars);
-        return "/admin/updateCar";
-    }//view cars only for updating method
 
-
-    @GetMapping("/admin/updateCarReg/{id}")
+   /* @GetMapping("/admin/updateCarReg/{id}")
     public String updateCar(@PathVariable("id") String id, Model model) {
         model.addAttribute("car", carService.findCar(id));
         model.addAttribute("familyCar", familyService.findFamily(id));
@@ -82,7 +71,20 @@ public class AdminController {
         familyService.updateFamily(familyCar.getRegistrationNumber(), familyCar);
         System.out.println("Error in sending to familyRepo update");
         return "redirect:/";
+    }*/
+
+    @GetMapping("/admin/update/car/{registration_number}")
+    public String updateCar(@PathVariable("registration_number") String registrationNumber, Model model){
+        model.addAttribute("updateFamilyCar", familyService.findFamily(registrationNumber));
+        return "admin/updateCarReg";
     }
+
+    @PostMapping("/updateCar")
+    public String updateCars(@ModelAttribute FamilyCar familyCar){
+        familyService.updateFamily(familyCar.getRegistrationNumber(), familyCar);
+        return "redirect:/admin/carsMenu";
+    }
+
 
     @GetMapping("/admin/newCar")
     public String newCar() {

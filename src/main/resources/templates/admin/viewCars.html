@@ -37,7 +37,7 @@
                 <td th:text="${familyCar.cruiseControl}"/> </td>
                 <td th:text="${familyCar.sevenSeatsOrMore}"/> </td>
                 <td>
-                    <a th:href="@{'/update/'+${familyCar.registrationNumber}}">Update</a>
+                    <a th:href="@{'/admin/update/car/'+${familyCar.registrationNumber}}">Update</a>
                     <a th:href="@{'/admin/car-viewFamily/'+${familyCar.registrationNumber}}">View</a>
                     <a th:href="@{'/admin/car/'+${familyCar.registrationNumber}}">Delete</a>
                 </td>
@@ -77,7 +77,7 @@
             <td th:text="${luxuryCar.cruiseControl}"/> </td>
             <td th:text="${luxuryCar.leatherSeats}"/> </td>
             <td>
-                <a th:href="@{'/update/'+${luxuryCar.registrationNumber}}">Update</a>
+                <a th:href="@{'/admin/update/car/'+${luxuryCar.registrationNumber}}">Update</a>
                 <a th:href="@{'/admin/car-viewLuxury/'+${luxuryCar.registrationNumber}}">View</a>
                 <a th:href="@{'/admin/car/'+${luxuryCar.registrationNumber}}">Delete</a>
             </td>
@@ -111,7 +111,7 @@
             <td th:text="${sportCar.manualGear}"/> </td>
             <td th:text="${sportCar.over200HP}"/> </td>
             <td>
-                <a th:href="@{'/update/'+${sportCar.registrationNumber}}">Update</a>
+                <a th:href="@{'/admin/update/car/'+${sportCar.registrationNumber}}">Update</a>
                 <a th:href="@{'/admin/car-viewSport/'+${sportCar.registrationNumber}}">View</a>
                 <a th:href="@{'/admin/car/'+${sportCar.registrationNumber}}">Delete</a>
             </td>

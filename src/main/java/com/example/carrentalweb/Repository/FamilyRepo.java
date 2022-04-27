@@ -30,7 +30,7 @@ public class FamilyRepo {
     }
 
     public FamilyCar getFamilyCarByRegistrationNumber(String registrationNumber) {
-        String sql = "SELECT * FROM family_cars  WHERE registration_number = ?";
+        String sql = "SELECT * FROM car_table  WHERE registration_number = ?";
         RowMapper<FamilyCar> rowMapper = new BeanPropertyRowMapper<>(FamilyCar.class);
         FamilyCar familyCar = jdbcTemplate.queryForObject(sql, rowMapper, registrationNumber);
         return familyCar;

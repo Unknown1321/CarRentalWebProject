@@ -2,11 +2,13 @@ package com.example.carrentalweb.Model;
 
 public class Car {
 
+    private String registrationNumber;
     private String brand;
     private String model;
-    private String registrationNumber;
     private String registrationDate;
     private int kmDriven;
+
+
 
     public Car(String registrationNumber, String brand, String model, String registrationDate, int kmDriven) {
         this.registrationNumber = registrationNumber;
@@ -16,22 +18,8 @@ public class Car {
         this.kmDriven = kmDriven;
     }
 
-    public Car() {
-    }
+    public Car(){
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", registrationNumber='" + registrationNumber + '\'' +
-                ", registrationDate='" + registrationDate + '\'' +
-                ", kmDriven=" + kmDriven +
-                '}';
-    }
-
-    public void setRegistrationNumber(String registrationNumber) {
-        this.registrationNumber = registrationNumber;
     }
 
     public String getBrand() {
@@ -54,6 +42,10 @@ public class Car {
         return registrationNumber;
     }
 
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
+    }
+
     public String getRegistrationDate() {
         return registrationDate;
     }
@@ -69,7 +61,4 @@ public class Car {
     public void setKmDriven(int kmDriven) {
         this.kmDriven = kmDriven;
     }
-
-
-
 }

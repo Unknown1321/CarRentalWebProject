@@ -76,7 +76,7 @@ public class AdminController {
         return "redirect:/";
     }*/
 
-    @GetMapping("/admin/update/car/{registration_number}")
+    @GetMapping("/update/car/{registration_number}")
     public String updateCar(@PathVariable("registration_number") String registrationNumber, Model model){
         model.addAttribute("updateFamilyCar", familyService.findFamily(registrationNumber));
         return "admin/updateCarReg";
@@ -87,6 +87,18 @@ public class AdminController {
         familyService.updateFamily(familyCar.getRegistrationNumber(), familyCar);
         return "redirect:/admin/carsMenu";
     }
+
+//    @GetMapping("/update/{driver_license_number}")
+//    public String update(@PathVariable("driver_license_number") String licenseNumber, Model model) {
+//        model.addAttribute("onecustomer", customerService.getCustomerByLicenceNumber(licenseNumber));
+//        return "admin/update-customer";
+//    }
+//
+//    @PostMapping("/updateCustomer")
+//    public String updatePerson(@ModelAttribute Customer customer) {
+//        customerService.updateCustomer(customer.getDriver_license_number(), customer);
+//        return "redirect:/admin/customerMenu";
+//    }
 
 
     @GetMapping("/admin/newCar")
@@ -215,6 +227,7 @@ public class AdminController {
         return "admin/view-customer";
     }
 
+
 //    @GetMapping("/update/{driver_license_number}")
 //    public String updateCustomer(@PathVariable("driver_license_number") String licenseNumber, Model model) {
 //        model.addAttribute("customerUpdate", customerService.getCustomerByLicenceNumber(licenseNumber));
@@ -228,15 +241,17 @@ public class AdminController {
 //    }
 
     @GetMapping("/update/{driver_license_number}")
-    public String update(@PathVariable("driver_license_number") String licenseNumber, Model model){
-        model.addAttribute("onecustomer",customerService.getCustomerByLicenceNumber(licenseNumber));
+    public String update(@PathVariable("driver_license_number") String licenseNumber, Model model) {
+        model.addAttribute("onecustomer", customerService.getCustomerByLicenceNumber(licenseNumber));
         return "admin/update-customer";
     }
+
     @PostMapping("/updateCustomer")
-    public String updatePerson(@ModelAttribute Customer customer){
+    public String updatePerson(@ModelAttribute Customer customer) {
         customerService.updateCustomer(customer.getDriver_license_number(), customer);
         return "redirect:/admin/customerMenu";
     }
+}
 
     @GetMapping("/admin/rentalMenu")
     public String rentalMenu() {

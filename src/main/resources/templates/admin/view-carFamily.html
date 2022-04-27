@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>View car family</title>
@@ -24,12 +24,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="car : ${car}" th:each="familyCar : ${familyCar}">
-        <td th:text="${car.registrationNumber}"/> </td>
-        <td th:text="${car.brand}"/> </td>
-        <td th:text="${car.model}"/> </td>
-        <td th:text="${car.registrationDate}"/> </td>
-        <td th:text="${car.kmDriven}"/> </td>
+    <tr th:each="familyCar : ${familyCar}">
+        <td th:text="${familyCar.registrationNumber}"/> </td>
+        <td th:text="${familyCar.brand}"/> </td>
+        <td th:text="${familyCar.model}"/> </td>
+        <td th:text="${familyCar.registrationDate}"/> </td>
+        <td th:text="${familyCar.kmDriven}"/> </td>
         <td th:text="${familyCar.manualGear}"/> </td>
         <td th:text="${familyCar.airCondition}"/> </td>
         <td th:text="${familyCar.cruiseControl}"/> </td>

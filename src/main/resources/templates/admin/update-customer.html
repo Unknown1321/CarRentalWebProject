@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<form action="/updateCustomer" method="post">
+<form th:action="@{/updateCustomer/ (driver_license_number=${driver_license_number})}" th:object="${onecustomer}" method="POST">
 
     <input type="text" name="driver_since_number"  class="text-box" placeholder="Enter driver since number" th:value="${onecustomer.driver_since_number}"  required>
     <br>
